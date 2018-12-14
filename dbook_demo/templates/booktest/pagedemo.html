@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul>
+    {% for item in page %}
+    <li>{{item.chaptername}}</li>
+    {% endfor %}
+
+<hr>
+    {% for index in page.pageinator.page_range %}
+    <a href="/pagedemo/{{index}}">{{index}}</a>
+    {% endfor %}
+</ul>
+</body>
+</html>

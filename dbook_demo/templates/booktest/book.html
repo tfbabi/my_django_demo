@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{book.novelname}}</title>
+    <style type="text/css">
+        .box{
+            margin: 0px auto;
+        }
+        .box a{
+            text-decoration: none;
+        }
+        .box a:hover{
+            color: deepskyblue;
+        }
+        .box table{
+        text-align: center;
+        text-decoration:none;
+        }
+        .box1:hover {
+            color: deepskyblue;
+        }
+
+        body{
+            text-align: center;
+            margin: 0px;
+            background-color: antiquewhite;
+        }
+        .box1{
+            text-decoration: none;
+            text-align: left;
+
+            margin:0px auto;
+        }
+        .box2{
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+
+
+
+
+    <div class="box">
+        <h3>{{book.novelname}}</h3>
+
+        {#回到首页#}
+            <a href="/index">回首页</a>
+        <a href="?page=1">回第一页</a>
+        {#上一页按钮开始#}
+        {# 如果当前页有上一页#}
+        {% if contacts.has_previous %}
+            {#  当前页的上一页按钮正常使用#}
+            <a href="?page={{ contacts.previous_page_number }}">上一页</a>
+        {% else %}
+            {# 当前页的不存在上一页时,上一页的按钮不可用#}
+            <a href="#">上一页</a>
+        {% endif %}
+        {#上一页按钮结束#}
+        {# 页码开始#}
+        {% for num in contacts.paginator.page_range %}
+
+            {% if num == contacts.number %}
+                <a href="?page={{ num }}">{{ num }}</a>
+            {% else %}
+                <a href="?page={{ num }}">{{ num }}</a>
+
+            {% endif %}
+        {% endfor %}
+        {#页码结束#}
+        {# 下一页按钮开始#}
+        {% if contacts.has_next %}
+            <a href="?page={{ contacts.next_page_number }}">下一页</a>
+        {% else %}
+            <a href="#">下一页</a>
+        {% endif %}
+        {# 下一页按钮结束#}
+        {# 最后一页开始#}
+        <a href="?page={{ contacts.paginator.num_pages }}">去最后一页</a>
+   </div>
+   <hr>
+<div class="box2">
+<table cellspacing="0" cellpadding="0" bgcolor="#E4E4E4" border="1" align="center" width="1000px">
+<tbody>
+    <th align="center">章节名称</th>
+    {% for item in contacts %}
+    <tr>
+        <td><a class="box1" href="../book{{book.novelid}}/{{item.chapterid}}/">{{item.chaptername}}</a></td>
+    </tr>
+    {%endfor%}
+</tbody>
+</table>
+    </div>
+</body>
+</html>
+
+<!--
+<ul>
+    <!--#for item in chapter 显示全部不分页失败的原因-->
+    <!--这是一段注释。注释不会在浏览器中显示。-->
+<!-- {% for item in contacts %}
+    <li><a href="../book{{book.novelid}}/{{item.chapterid}}/">{{item.chaptername}}</a></li>
+    {%endfor%}
+    <hr>
+</ul>
+-->

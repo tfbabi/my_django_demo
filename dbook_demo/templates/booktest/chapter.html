@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{chapter.chaptername}}</title>
+    <style type="text/css">
+    .box{
+        background-color: beige;
+        width: 1317px;
+        font-size: 22px;
+        font-family: "微软雅黑", sans-serif;
+        padding: 25px;
+        margin: 0px auto;
+    }
+    .thead{
+        background-color: mintcream;
+        font-family: "微软雅黑", sans-serif;
+        font-size: 30px;
+        padding-top: 5px;
+        }
+    h3{
+        margin: 0px;
+    }
+    .thead a{
+        text-decoration: none;
+        font-size: 15px;
+    }
+    .thread p{
+        padding: 5px;
+    }
+    .thead a:hover{
+        color: deepskyblue;
+    }
+    body{
+        background-color: mintcream;
+        margin: 0px;
+    }
+
+    </style>
+</head>
+<body>
+<div class="thead" align="center">
+    <h3>{{chapter.chaptername}}</h3>
+<a href="/index">回首页</a> <a href="/book{{chapter.bookid_id}}/">回章节列表页</a>
+</div>
+<div>
+    <div class="box">{{chapter.content|linebreaksbr}}</div>
+</div>
+</body>
+</html>

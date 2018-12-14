@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{request.user}}密码重置页面</title>
+</head>
+<body>
+<form action="/setpwdHandle/" method="post">
+    {% csrf_token %}
+    <label>密码:</label>
+    <input type="password" name="passwd" value=""><br />
+    <input type="submit" value="确定">
+</form>
+</body>
+</html>

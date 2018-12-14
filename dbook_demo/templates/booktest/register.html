@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <style type="text/css">
+    .con{
+        margin: 0px auto 0px;
+        width: 1000px;
+
+    }
+    .con h3{
+        text-align: center;
+        font-size: 30px;
+    }
+    .con form{
+        margin: 0px,auto;
+        font-size: 15px;
+        text-align: center;
+
+    }
+        body{
+            background-color: aliceblue;
+        }
+        table{
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="con">
+<h3>用户注册</h3>
+<form action="/zhuceHandle1/" method="post"> <!-- 默认为get方式 提交的并不安全 所以用post -->
+    <!--<form action="/zhuceHandle/" method="post"> <!-- 默认为get方式 提交的并不安全 所以用post -->
+    <!-- 防止跨站伪装攻击  csrf-->
+
+    {% csrf_token %}
+    <label for="username">用户名:</label> <!--for属性激活输入框 -->
+    <input type="text" name="username" id="username" value=""><br /> <!--这里的id给for使用 -->
+    <label>密码:</label>
+    <input type="password" name="passwd" value=""><br />
+    <label>性别:</label>
+    <input type="radio" name="gender" id="man" value="男"><label for="man">男</label>
+    <input type="radio" name="gender" id="women" value="女"><label for="women">女</label><br />
+    <label>爱好:</label>
+    <input type="checkbox" name="hobby" id="smoke" value="抽烟"><label for="smoke">抽烟</label>
+    <input type="checkbox" name="hobby" id="drunk" value="喝酒"><label for="drunk">喝酒</label>
+    <input type="checkbox" name="hobby" value="打游戏">LOL
+    <input type="checkbox" name="hobby" value="打飞机">打飞机 <br/>
+    <label>照片:</label>
+    <input  type="file"><br />
+    <label>个人描述:</label>
+    <textarea name="info"></textarea><br />
+    <label>籍贯:</label>
+    <select name="pos">
+        <option value="北京">北京</option>
+        <option value=上海>上海</option>
+        <option value="广州">广州</option>
+        <option value="深圳">深圳</option>
+        <option value="天津">天津</option>
+        <option value="河北">河北</option>
+    </select><br />
+    <input type="submit" value="提交">
+    <input type="reset" value="重置">
+    <input type="button" value="按钮">
+    <input type="hidden" value="100" name="hid">
+    <!--<input type="image" src="resume.png"> --> <!--有bug 不建议使用 会提交2次 点这个图片也可以进行提交 和 subbit类似 -->
+</form></div>
+</body>
+</html>

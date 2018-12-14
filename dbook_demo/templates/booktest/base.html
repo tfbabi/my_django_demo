@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .user{
+            font-size: 15px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-top: 0px;
+        }
+        .user div a{
+        text-align: center;
+        }
+           </style>
+</head>
+<body>
+<div class="user">
+    <div>当前登录用户为{{request.user}}||
+        <a href="/setpwd">密码修改</a>
+        <a href="/logout/">用户注销</a>
+    </div>
+{%block content%}
+
+{%endblock%}
+
+</body>
+</html>

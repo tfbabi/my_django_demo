@@ -1,0 +1,83 @@
+{%extends 'base.html'%}
+{%block css%}
+
+{%endblock%}
+
+{% block body %}
+<div class="title">
+    <div class="user">当前登录用户为{{request.user}}||
+        <a href="/setpwd">密码修改</a>
+        <a href="/logout/">用户注销</a>
+    </div>
+   <h1 align="center">欢迎<span>{{request.user}}</span>来到顶点Demo小说网</h1>
+    {#回到首页#}
+    <a href="?page=1">回第一页</a>
+        {#上一页按钮开始#}
+        {# 如果当前页有上一页#}
+        {% if contacts.has_previous %}
+            {#  当前页的上一页按钮正常使用#}
+            <a href="?page={{ contacts.previous_page_number }}">上一页</a>
+        {% else %}
+            {# 当前页的不存在上一页时,上一页的按钮不可用#}
+            <a href="#">上一页</a>
+        {% endif %}
+        {#上一页按钮结束#}
+        {# 页码开始#}
+        {% for num in contacts.paginator.page_range %}
+
+            {% if num == contacts.number %}
+                <a href="?page={{ num }}">{{ num }}</a>
+            {% else %}
+                <a href="?page={{ num }}">{{ num }}</a>
+
+            {% endif %}
+        {% endfor %}
+        {#页码结束#}
+        {# 下一页按钮开始#}
+        {% if contacts.has_next %}
+            <a href="?page={{ contacts.next_page_number }}">下一页</a>
+        {% else %}
+            <a href="#">下一页</a>
+        {% endif %}
+        {# 下一页按钮结束#}
+        {# 最后一页开始#}
+        <a href="?page={{ contacts.paginator.num_pages }}">去最后一页</a>
+   <hr>
+    </div>
+<div  class="box">
+<table class="table table-striped table-bordered table-hover">
+    <th>图书列表</th>
+    <th>作者</th>
+    <th>类型</th>
+    <th>字数</th>
+    <th>收藏数</th>
+    <th>总点击数</th>
+    <th>月点击数</th>
+    <th>周点击数</th>
+    <th>总推荐数</th>
+    <th>月推荐数</th>
+    <th>周推荐数</th>
+    <th>最后更新时间</th>
+{% for item in contacts %}
+<tr><td><a class="box1" href="../book{{item.novelid}}/">{{item.novelname}}</a></td>
+        <td>{{item.author}}</td>
+        <td>{{item.novel_type}}</td>
+        <td>{{item.bookstrnum}}</td>
+    <td>{{item.mark}}</td>
+    <td>{{item.totalclick}}</td>
+    <td>{{item.monthclick}}</td>
+    <td>{{item.weekclick}}</td>
+    <td>{{item.totolup}}</td>
+    <td>{{item.monthup}}</td>
+    <td>{{item.weekup}}</td>
+    <td>{{item.lastdate}}</td>
+</tr>
+{%endfor%}
+</table>
+</div>
+{%endblock%}
+
+-->
+</body>
+</html>
+
