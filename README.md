@@ -1,2 +1,1 @@
-# my_django_demo
-demo
+本实例用爬虫爬取顶点小说网站中的小说,存入mysql数据库中，用Django框架结合css，bootstrap做了个简单丑陋的网站。
