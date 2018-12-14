@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h3>注册页面</h3>
+<form action="http://www.itcast.cn" method="post"> <!-- 默认为get方式 提交的并不安全 所以用post -->
+
+    <label for="username">用户名:</label> <!--for属性激活输入框 -->
+    <input type="text" name="username" id="username" value="tom"><br /> <!--这里的id给for使用 -->
+    <label>密码:</label>
+    <input type="password" name="passwd" value="123"><br />
+    <label>性别:</label>
+    <input type="radio" name="gender" id="man" value="0"><label for="man">男</label>
+    <input type="radio" name="gender" id="women" value="1"><label for="women">女</label><br />
+    <label>爱好:</label>
+    <input type="checkbox" name="gender" id="smoke" value="smoke"><label for="smoke">抽烟</label>
+    <input type="checkbox" name="gender" id="drunk" value="sdrunk"><label for="drunk">喝酒</label>
+    <input type="checkbox" name="gender">LOL
+    <input type="checkbox" name="gender">打飞机 <br/>
+    <label>照片:</label>
+    <input  type="file"><br />
+    <label>个人描述:</label>
+    <textarea name="info"></textarea><br />
+    <label>籍贯:</label>
+    <select name="pos">
+        <option value="0">北京</option>
+        <option value="1">上海</option>
+        <option value="2">广州</option>
+        <option value="3">深圳</option>
+        <option value="4">天津</option>
+    </select><br />
+    <input type="submit" value="提交">
+    <input type="reset" value="重置">
+    <input type="button" value="按钮">
+    <input type="hidden" value="100" name="hid">
+    <input type="image" src="resume.png">  <!--有bug 不建议使用 会提交2次 点这个图片也可以进行提交 和 subbit类似 -->
+</form>
+</body>
+</html>

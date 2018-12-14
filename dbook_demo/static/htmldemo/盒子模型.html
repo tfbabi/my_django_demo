@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒子模型</title>
+    <style type="text/css">
+        .box{
+            font-size: 40px;
+            background-color: springgreen;
+            width: 500px;
+            height: 300px;
+            /*border统一写法*/
+            border: 10px solid #000;
+            /*padding统一写法*  顺时针转 四个值 上右下左*/
+            padding: 50px 20px 50px 20px;
+            /*padding统一写法*  顺时针转 三个值 上【右左】下*/
+            padding: 50px 100px 50px;
+            /*padding统一写法*  顺时针转 两个值 【上下】【右左】*/
+            padding: 150px 50px;
+            /*padding统一写法*  顺时针转 1个值 【上下右左】*/
+            padding: 100px;
+            /*
+            padding-top: 100px;
+            padding-left: 70px;
+            padding-right: 70px;
+            padding-bottom: 100px;
+            */
+              /*padding统一写法*  和padding相同*/
+            margin-top: 50px;
+            margin-left: 50px;
+            margin-bottom: 100px;
+            /*让盒子水平居中*/
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">外边距的设置方法和padding的设置方法相同，将上面设置项中的'padding'换成'margin'就是外边距设置方法。</div>
+<div class="box">外边距的设置方法和padding的设置方法相同，将上面设置项中的'padding'换成'margin'就是外边距设置方法。</div>
+
+<div class="box"></div>
+</body>
+</html>

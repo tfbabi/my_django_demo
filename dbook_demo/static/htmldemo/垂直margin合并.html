@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>垂直margin合并</title>
+    <style type="text/css">
+        .box{
+            height: 300px;
+            width: 600px;
+            border: 1px solid #333;
+            margin: 50px auto;
+        }
+        .box div{
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div>
+        1、visible 默认值。内容不会被修剪，会呈现在元素框之外。
+2、hidden 内容会被修剪，并且其余内容是不可见的，此属性还有清除浮动、清除margin-top塌陷的功能。
+3、scroll 内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。
+4、auto 如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。
+5、inherit 规定应该从父元素继承 overflow 属性的值。
+    </div>
+
+</div>
+</body>
+</html>

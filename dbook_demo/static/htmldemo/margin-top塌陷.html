@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .con{
+            width: 300px;
+            height: 200px;
+            background-color: gold;
+            /*overflow: hidden; 设置元素溢出*/
+
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            margin-top: 50px;
+        }
+        /* 伪元素 类似给盒子加边框*/
+        .clearfix:before{
+            content:"";
+            display: table;
+        }
+    </style>
+</head>
+<body>
+<div class="con clearfix">
+    <div class="box"></div>
+</div>
+</body>
+</html>

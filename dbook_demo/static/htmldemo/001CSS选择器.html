@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css选择器</title>
+    <style type="text/css">
+
+        div,p{
+            font-size:20px;
+            color: blue;
+        }
+        p:hover{
+            color: darkgoldenrod;
+        }
+        #box{
+            color: antiquewhite;
+         }
+        .yahei{
+            font-family: "Monaco";
+            font-size: 40px;
+            color: brown;
+        }
+        .ident{
+            text-indent: 40px;
+        }
+
+        .list li{
+            height: 30px;
+        }
+        .list a{
+            text-decoration: none;
+            color: crimson;
+        }
+        .list a:hover{
+            color: gold;
+            text-decoration: underline;
+        }
+        .box1,.box2,.box3{
+            font-size: 15px;
+            text-indent: 28px;
+        }
+        .box1{
+
+            color: red;
+        }
+        .box1:before{
+            content: "在前面的文字";
+            color: springgreen;
+        }
+        .box2{
+
+            color: gold;
+        }
+        .box2:after{
+            content: "在后边的文字";
+            color: springgreen;
+        }
+        .box3{
+
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+<div>
+    这是一个DIV标签(元素) 是同一个东西  这个是标签选择器
+</div>
+<div id="box">
+    这是第二个DIV标签，iD选择器，基本不会用
+</div>
+<div class="yahei ident">
+    这是第三个个DIV标签(元素) 类选择器
+</div>
+<p>这是一段文字</p>
+<ul class="list">
+    <li><a href="">新闻标题1</a></li>
+    <li><a href="">新闻标题2</a></li>
+    <li><a href="">新闻标题3</a></li>
+    <li><a href="">新闻标题4</a></li>
+    <li><a href="">新闻标题5</a></li>
+</ul>
+
+<div class="box1">
+    文字1
+</div>
+<div class="box2">
+    文字2
+</div>
+<div class="box3">
+    文字3
+</div>
+</body>
+</html>
